@@ -3,13 +3,15 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t daba-client .'
+        sh '''echo "Y" | docker service prune -a
+
+docker build -t daba-client .'''
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'docker run -P daba-client'
+        sh 'docker run -d -P --name client daba-client'
       }
     }
 
