@@ -31,6 +31,8 @@ FROM node:16-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ENV NEXT_PUBLIC_BASE_URL=https://daba-api.herokuapp.com/graphql
+
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -49,7 +51,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-ENV NEXT_PUBLIC_BASE_URL=https://daba-api.herokuapp.com/graphql
+
 EXPOSE 3000
 
 ENV PORT 3000
