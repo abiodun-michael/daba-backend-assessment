@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Y" | docker system prune -a'
-        sh 'docker build -t daba-client .'
+        sh 'docker build -t daba-client:${BUILD_NUMBER} .'
       }
     }
 
