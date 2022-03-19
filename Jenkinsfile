@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''echo "Y" | docker service prune -a
+        sh '''echo "Y" | docker system prune -a
 
 docker build -t daba-client .'''
       }
