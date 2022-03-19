@@ -12,6 +12,9 @@ RUN npm ci
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
+
+ENV NEXT_PUBLIC_BASE_URL https://daba-api.herokuapp.com/graphql
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -35,7 +38,7 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-ENV NEXT_PUBLIC_BASE_URL https://daba-api.herokuapp.com/graphql
+
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
