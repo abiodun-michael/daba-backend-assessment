@@ -49,6 +49,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
+ENV NEXT_PUBLIC_BASE_URL=https://daba-api.herokuapp.com/graphql
 EXPOSE 3000
 
 ENV PORT 3000
