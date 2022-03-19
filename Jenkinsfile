@@ -10,7 +10,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'docker rm client'
+        sh 'docker stop client && docker rm client'
         sh 'docker run -d -P --name client daba-client'
       }
     }
