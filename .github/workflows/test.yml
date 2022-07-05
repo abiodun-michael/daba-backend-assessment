@@ -1,7 +1,7 @@
 name: Github action  test
 on: [push]
 jobs:
-  Just testing the action
+  Just testing the action:
     runs-on: ubuntu-latest
     steps:
     - run: echo "The job was automaticlly triggerd"
