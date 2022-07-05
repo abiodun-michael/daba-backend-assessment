@@ -1,0 +1,10 @@
+name: Automation test
+on: [push]
+jobs:
+  Print a message
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show message
+      run: echo "I am printing a message"
+  
+  
